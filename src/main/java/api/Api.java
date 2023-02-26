@@ -1,5 +1,7 @@
 package api;
 
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -8,7 +10,7 @@ import java.net.URL;
 public class Api {
 
 
-    public static String doGetRequest(String url) {
+    public static JSONObject doGetRequest(String url) {
         try {
             URL urlObj = new URL(url);
             HttpURLConnection conn = (HttpURLConnection) urlObj.openConnection();
@@ -23,7 +25,7 @@ public class Api {
             }
             in.close();
 
-            return response.toString();
+            return new JSONObject(response.toString());
         } catch (Exception e) {
             System.out.println("Error on request: " + e.getMessage());
             return null;
