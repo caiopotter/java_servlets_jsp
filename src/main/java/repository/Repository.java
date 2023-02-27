@@ -4,9 +4,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.sql.*;
 import java.time.Instant;
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
-import java.util.Date;
 
 public class Repository {
     public void insert(Forecast forecast) {
